@@ -13,3 +13,7 @@ lambda kifejezés:
             });
 			
 belso osztály
+
+TreeSet rendezett
+HashSet rendezett
+Map<String, Integer>

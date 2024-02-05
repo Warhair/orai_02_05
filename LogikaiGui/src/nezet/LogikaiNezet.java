@@ -7,7 +7,7 @@ import javax.swing.JRadioButton;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
-public class LogikaiNezet extends javax.swing.JFrame {
+public class LogikaiNezet extends javax.swing.JFrame implements Modosithato{
 
     public LogikaiNezet() {
         initComponents();
@@ -40,6 +40,10 @@ public class LogikaiNezet extends javax.swing.JFrame {
 
     public JCheckBox getChbRogton() {
         return chbRogton;
+    }
+    @Override
+    public void setLblLeiras() {
+       lblLeiras.setText(text);
     }
     
     @SuppressWarnings("unchecked")
@@ -174,4 +178,6 @@ public class LogikaiNezet extends javax.swing.JFrame {
     private javax.swing.JTextArea txaFeladat;
     private javax.swing.JTextField txtEredmeny;
     // End of variables declaration//GEN-END:variables
+
+    
 }
