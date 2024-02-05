@@ -32,7 +32,7 @@ public class LogikaiVezerlo {
         
         rogton = false;
         
-        this.nezet.getLblLeiras().setText(this.modell.getLeiras());
+        this.nezet.setLblLeiras(this.modell.getLeiras());
 
         rdbs = this.nezet.getRdbs();
         for (int i = 0; i < rdbs.length; i++) {
