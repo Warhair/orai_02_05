@@ -1,27 +1,47 @@
-package nezet_vezerlo;
+package nezet;
 
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JLabel;
 import javax.swing.JRadioButton;
-import modell.Feladat;
-import modell.Lada;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
 
-public class LogikaiNezetVezerlo extends javax.swing.JFrame {
+public class LogikaiNezet extends javax.swing.JFrame {
 
-    private Feladat modell;
-    private Lada[] ladak;
-    
-    private JRadioButton[] rdbs;
-    private boolean rogton;
-    
-    public LogikaiNezetVezerlo() {
+    public LogikaiNezet() {
         initComponents();
-        
-        /* legyen esemény alapján:
-         * esemény: windowOpened
-         * esemény kezelő metódusa: formWindowOpened <--az esemény hatására lefutó metódus
-        */
-        //jLabel1.setText("Csak 1 állítás igaz!");
     }
 
+    public JRadioButton[] getRdbs(){
+        JRadioButton[] rdbs = new JRadioButton[3];
+        rdbs[0] = rdbArany;
+        rdbs[1] = rdbEzust;
+        rdbs[2] = rdbBronz;
+        
+        return rdbs;
+    }
+
+    public JLabel getLblLeiras() {
+        return lblLeiras;
+    }
+    
+    public JTextArea getTxaFeladat() {
+        return txaFeladat;
+    }
+
+    public JButton getBtnVizsgal() {
+        return btnVizsgal;
+    }
+
+    public JTextField getTxtEredmeny() {
+        return txtEredmeny;
+    }
+
+    public JCheckBox getChbRogton() {
+        return chbRogton;
+    }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -41,11 +61,6 @@ public class LogikaiNezetVezerlo extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Logikai GUI");
-        addWindowListener(new java.awt.event.WindowAdapter() {
-            public void windowOpened(java.awt.event.WindowEvent evt) {
-                formWindowOpened(evt);
-            }
-        });
 
         lblLeiras.setText("jLabel1");
 
@@ -58,41 +73,16 @@ public class LogikaiNezetVezerlo extends javax.swing.JFrame {
 
         buttonGroup1.add(rdbArany);
         rdbArany.setText("jRadioButton1");
-        rdbArany.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                kincsVizsgalat(evt);
-            }
-        });
 
         buttonGroup1.add(rdbEzust);
         rdbEzust.setText("jRadioButton2");
-        rdbEzust.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                kincsVizsgalat(evt);
-            }
-        });
 
         buttonGroup1.add(rdbBronz);
         rdbBronz.setText("jRadioButton3");
-        rdbBronz.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                kincsVizsgalat(evt);
-            }
-        });
 
         chbRogton.setText("rögtön vizsgál");
-        chbRogton.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                chbRogtonItemStateChanged(evt);
-            }
-        });
 
         btnVizsgal.setText("Vizsgál");
-        btnVizsgal.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnVizsgalActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -169,71 +159,6 @@ public class LogikaiNezetVezerlo extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        rogton = false;
-        
-        /* modellből jönnek: */
-//        lblLeiras.setText("Csak 1 állítás igaz!");
-//        
-//        String[] anyagok = {"arany", "ezüst", "bronz"};
-//        String[] feliratok = {"én rejtem!", "nem én rejtem!", "az arany hazudik!"};
-        modell = new Feladat();
-        ladak = modell.getLadak();
-        
-
-        rdbs = new JRadioButton[3];
-        rdbs[0] = rdbArany;
-        rdbs[1] = rdbEzust;
-        rdbs[2] = rdbBronz;
-        for (int i = 0; i < rdbs.length; i++) {
-            //String anyag = anyagok[i];
-            /* ha nincs ladak: */
-            //String anyag = modell.getLadak()[i].getAnyag();
-            Lada lada = ladak[i];
-            String anyag = lada.getAnyag();
-            
-            rdbs[i].setText(anyag);
-            //String f = feliratok[i];
-            String f = lada.getFelirat();
-            f = anyag + ": " + f + "\n";
-            txaFeladat.append(f);
-        }
-    }//GEN-LAST:event_formWindowOpened
-
-    private void btnVizsgalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVizsgalActionPerformed
-        vizsgal();
-    }//GEN-LAST:event_btnVizsgalActionPerformed
-
-    private void chbRogtonItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_chbRogtonItemStateChanged
-        btnVizsgal.setEnabled(!chbRogton.isSelected());
-        rogton = chbRogton.isSelected();
-    }//GEN-LAST:event_chbRogtonItemStateChanged
-
-    /* rdbArany, rdbEzust, rdbBronz ItemStateChanged események kezelője: 
-    ez a közös eseménykezelő
-    */
-    private void kincsVizsgalat(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_kincsVizsgalat
-        if (rogton) {
-            vizsgal();
-        }
-    }//GEN-LAST:event_kincsVizsgalat
-
-    private void vizsgal() {
-        int i = 0;
-        while(i < rdbs.length && !rdbs[i].isSelected()){
-            i++;
-        }
-        
-        if(i >= rdbs.length){
-            txtEredmeny.setText("Nincs választott láda!");
-        //}else if(i == 1){//OOP használatával --> lada.isKincs()
-        }else if(ladak[i].isKincs()){
-            txtEredmeny.setText("Eltaláltad!");
-        }else{
-            txtEredmeny.setText("Nem talált!");
-        }
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnVizsgal;

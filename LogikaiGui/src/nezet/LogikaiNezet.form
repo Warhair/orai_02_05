@@ -13,9 +13,6 @@
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
     <SyntheticProperty name="generateCenter" type="boolean" value="true"/>
   </SyntheticProperties>
-  <Events>
-    <EventHandler event="windowOpened" listener="java.awt.event.WindowListener" parameters="java.awt.event.WindowEvent" handler="formWindowOpened"/>
-  </Events>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
@@ -148,9 +145,6 @@
             </Property>
             <Property name="text" type="java.lang.String" value="jRadioButton1"/>
           </Properties>
-          <Events>
-            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="kincsVizsgalat"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JRadioButton" name="rdbEzust">
           <Properties>
@@ -159,9 +153,6 @@
             </Property>
             <Property name="text" type="java.lang.String" value="jRadioButton2"/>
           </Properties>
-          <Events>
-            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="kincsVizsgalat"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JRadioButton" name="rdbBronz">
           <Properties>
@@ -170,25 +161,16 @@
             </Property>
             <Property name="text" type="java.lang.String" value="jRadioButton3"/>
           </Properties>
-          <Events>
-            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="kincsVizsgalat"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JCheckBox" name="chbRogton">
           <Properties>
             <Property name="text" type="java.lang.String" value="r&#xf6;gt&#xf6;n vizsg&#xe1;l"/>
           </Properties>
-          <Events>
-            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="chbRogtonItemStateChanged"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnVizsgal">
           <Properties>
             <Property name="text" type="java.lang.String" value="Vizsg&#xe1;l"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnVizsgalActionPerformed"/>
-          </Events>
         </Component>
       </SubComponents>
     </Container>

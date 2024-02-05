@@ -1,12 +1,12 @@
 package modell;
 
-public class Feladat {
+public class LogikaiFeladat {
     
     private Lada[] ladak;
     private String leiras;
     
-    public Feladat(){
-        leiras = "Csak 1 állítás igaz";
+    public LogikaiFeladat(){
+        leiras = "Csak 1 állítás igaz!";
         Lada arany = new Lada("arany", "én rejtem");
         Lada ezust = new Lada("ezüst", "nem én rejtem", true);
         Lada bronz = new Lada("bronz", "az arany hazudik");
@@ -15,7 +15,6 @@ public class Feladat {
         ladak[1] = ezust;
         ladak[2] = bronz;
     }
-     
 
     public Lada[] getLadak() {
         return ladak;
@@ -24,7 +23,5 @@ public class Feladat {
     public String getLeiras() {
         return leiras;
     }
-    
-    
-
+   
 }
