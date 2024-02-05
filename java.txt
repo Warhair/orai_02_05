@@ -3,3 +3,13 @@ jre kapcsolat a jre-vel
 bite kód
 gépi kód
 fordito, futattó java vég kapcsolatok
+
+metdodus preferencia members
+rdbs[i].addItemListener(this::kincsVizsgalat);
+
+lambda kifejezés:
+ rdbs[i].addItemListener((ItemEvent e) -> {
+                kincsVizsgalat(e);
+            });
+			
+belso osztály
