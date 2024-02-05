@@ -1,1 +1,1 @@
-jövőhét szerda dolgozat
+szerda dolgozat
