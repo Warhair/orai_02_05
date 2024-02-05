@@ -1,0 +1,5 @@
+jdk kapcsolat a jre-vel
+jre kapcsolat a jre-vel
+bite kód
+gépi kód
+fordito, futattó java vég kapcsolatok
