@@ -17,3 +17,32 @@ belso osztály
 TreeSet rendezett
 HashSet rendezett
 Map<String, Integer>
+
+JDK (Java Development Kit): A JDK a Java fejlesztési eszközkészlet rövidítése. Ez tartalmazza a Java fordítót (javac), ami a Java forráskódját byte kóddá fordítja, valamint egy sor egyéb eszközt és könyvtárat, amelyek segítségével Java alkalmazásokat lehet fejleszteni és futtatni.
+
+JRE (Java Runtime Environment): A JRE a Java futtatási környezet rövidítése. Ez tartalmazza a Java virtuális gépet (JVM), amely lehetővé teszi a Java byte kódú alkalmazások futtatását a célplatformon. A JRE tartalmazza továbbá az alapvető Java osztálykönyvtárat is, amelyre az alkalmazásoknak szükségük van.
+
+Byte kód: A Java forráskódot először byte kóddá fordítják, ami egy köztes kód, amelyet a Java virtuális gép (JVM) értelmez és futtat. Ez lehetővé teszi, hogy a Java alkalmazások platformfüggetlenek legyenek, mivel a byte kód egyetlen platformfüggetlen nyelvi konstrukciótól való.
+
+Gépi kód: A gépi kód olyan utasítássorozat, amelyet a processzor közvetlenül értelmezhet. A Java byte kódot a JVM fordítja gépi kóddá a futtatási környezetben, a célplatformon. Ez az utolsó lépés a futtatási folyamatban, mielőtt az alkalmazások futtathatóak lesznek.
+
+Az összekapcsolások és a folyamatok tehát a következőképpen működnek:
+
+A JDK tartalmazza a fordítót (javac), amely a forráskódot byte kóddá alakítja.
+A JRE tartalmazza a JVM-et, amely a byte kódot gépi kóddá fordítja és futtatja.
+Az alkalmazások forráskódja a JDK segítségével fordítható byte kóddá.
+Az elkészült byte kód a JRE segítségével futtatható a JVM-en keresztül.
+User
+java. végén mejika futtatás és fordités
+ChatGPT
+A Java forráskód futtatása és fordítása során a következő lépéseket kell végrehajtani:
+
+Fordítás: A Java forráskódot a JDK (Java Development Kit) részeként található javac nevű fordítóprogrammal fordítják. Ez a program a Java forráskódot byte kóddá alakítja. A fordítás során a következő lépéseket kell végrehajtani:
+
+A fenti példában HelloWorld.java a forráskód fájl neve. A fordítóprogram ebből a forráskódból létrehoz egy HelloWorld.class nevű fájlt, amely tartalmazza a byte kódot.
+
+Futtatás: Miután a forráskódot byte kóddá fordították, a Java virtuális gép (JVM) segítségével futtatható. A futtatás a következőképpen történik:
+
+A fenti példában HelloWorld az osztály neve, amelynek a main metódusa fog futni. A JVM ezt az osztályt keresi meg a byte kódfájlban (HelloWorld.class) és futtatja a main metódust.
+
+Ezek a lépések a Java forráskód fordítását és futtatását jelentik. Fontos megjegyezni, hogy a JDK tartalmazza mind a fordítóprogramot (javac), mind a futtatókörnyezetet (JVM), amelyek lehetővé teszik a Java alkalmazások fejlesztését és futtatását.
